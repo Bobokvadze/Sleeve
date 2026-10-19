@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLEEVE — Listen in Full | Album Rating &amp; Review Platform</title>
+  <meta name="description" content="Discover albums, inspect full tracklists, rate every song, and curate your personal album rating library with SLEEVE." />
+  <meta name="theme-color" content="#0B0B0C" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet" />
+
+  <!-- SLEEVE Design System Stylesheets -->
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/views.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="app-shell">
+    <!-- Top Editorial Navigation Bar -->
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a href="#discover" class="brand-lockup" id="brand-home-link" aria-label="SLEEVE Home - Discover Albums">
+          <span class="brand-emblem" aria-hidden="true">
+            <span class="brand-sleeve-box"></span>
+            <span class="brand-vinyl-disc"></span>
+          </span>
+          <span class="brand-text-group">
+            <span class="brand-name">SLEEVE</span>
+            <span class="brand-tagline">LISTEN IN FULL</span>
+          </span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary Navigation">
+          <button type="button" class="nav-tab is-active" id="nav-discover-btn" data-nav="discover">
+            <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.75"/>
+              <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+            <span>Discover</span>
+          </button>
+
+          <button type="button" class="nav-tab" id="nav-library-btn" data-nav="library">
+            <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <rect x="3" y="3.5" width="4" height="13" rx="1" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="8.5" y="3.5" width="4" height="13" rx="1" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M14.5 4.2L17.5 16.2" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+            <span>My Library</span>
+            <span class="nav-count-badge" id="nav-library-count" hidden>0</span>
+          </button>
+
+                    <button type="button" class="nav-tab" id="nav-profile-btn" data-nav="profile">
+            <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 15.5V10.5M10 15.5V4.5M16 15.5V8" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/>
+            </svg>
+            <span>Taste Profile</span>
+          </button>
+
+                    <button type="button" class="nav-tab" id="nav-insights-btn" data-nav="insights">
+            <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.65"/>
+              <path d="M10 6V10L13 12" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/>
+            </svg>
+            <span>Insights</span>
+          </button>
+
+                    <button type="button" class="nav-tab" id="nav-journal-btn" data-nav="journal">
+            <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <rect x="4" y="3" width="12" height="14" rx="1.8" stroke="currentColor" stroke-width="1.65"/>
+              <path d="M7.5 7H12.5M7.5 10H12.5M7.5 13H10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Journal</span>
+            <span class="nav-count-badge" id="nav-journal-count" hidden>0</span>
+          </button>
+
+                    <button type="button" class="nav-tab" id="nav-collections-btn" data-nav="collections">
+            <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="11" y="3" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="3" y="11" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="11" y="11" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            <span>Collections</span>
+            <span class="nav-count-badge" id="nav-collections-count" hidden>0</span>
+          </button>
+
+          <button type="button" class="nav-tab" id="nav-inspector-btn" data-nav="inspector" hidden>
+            <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.75"/>
+              <circle cx="10" cy="10" r="2.2" fill="currentColor"/>
+            </svg>
+            <span id="nav-inspector-label">Active Record</span>
+          </button>
+        </nav>
+
+        <div class="header-meta">
+          <div class="api-status-pill" id="api-status-pill" title="Connected to Apple iTunes public metadata endpoint">
+            <span class="status-dot status-dot--live" id="api-status-dot"></span>
+            <span class="status-text" id="api-status-text">CATALOG LIVE</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main View Mount Container -->
+    <main id="main-content" class="main-content" tabindex="-1">
+      <div id="view-root" class="container">
+        <!-- Populated dynamically by js/app.js -->
+      </div>
+    </main>
+
+    <!-- Editorial Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <div class="footer-brand-col">
+          <span class="footer-brand">SLEEVE // ARCHIVAL ALBUM LOG</span>
+          <p class="footer-copy">
+            Built for album-first listeners. Album metadata and artwork provided via the public iTunes Search &amp; Lookup API.
+          </p>
+        </div>
+        <div class="footer-meta-col">
+          <span class="footer-badge">PHASE 9B BUILD &middot; SMART COLLECTIONS &amp; POSTERS</span>
+          <span class="footer-shortcut-hint">Press <kbd>/</kbd> to search</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Non-intrusive Status Toast Container -->
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Application Entry Module -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
