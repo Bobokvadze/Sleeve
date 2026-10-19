@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Accessible Library JSON Import & Preview Modal (Phase 6 - Part 2)
+ * RATEPLAY - Accessible Library JSON Import & Preview Modal (Phase 6 - Part 2)
  * Validates selected JSON files, displays a detailed preview of albums to be
  * added or updated, asks for confirmation before overwriting existing ratings,
  * and creates an automatic localStorage backup before applying changes.
@@ -51,10 +51,10 @@ function ensureImportModalMount() {
     '<div class="import-modal__body">' +
     '<div class="import-file-picker-box">' +
     '<label for="import-json-file-input" class="import-file-label">' +
-    '<span class="import-file-label__title">Select a SLEEVE Library JSON Backup (.json)</span>' +
+    '<span class="import-file-label__title">Select a RATEPLAY Library JSON Backup (.json)</span>' +
     '<span class="import-file-label__sub">Your existing library is never erased. A local backup snapshot is created automatically before any changes are applied.</span>' +
     '</label>' +
-    '<input type="file" id="import-json-file-input" class="import-file-input" accept=".json,application/json" aria-label="Choose SLEEVE library JSON file to import" />' +
+    '<input type="file" id="import-json-file-input" class="import-file-input" accept=".json,application/json" aria-label="Choose RATEPLAY library JSON file to import" />' +
     '</div>' +
     '<div id="import-backup-restore-bar" class="import-backup-restore-bar" hidden></div>' +
     '<div id="import-validation-mount" aria-live="polite"></div>' +

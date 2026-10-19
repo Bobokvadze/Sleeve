@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Album Detail, Tracklist Inspector, Track Rating & Journal View (Phases 3-8)
+ * RATEPLAY - Album Detail, Tracklist Inspector, Track Rating & Journal View (Phases 3-8)
  */
 
 import {
@@ -39,7 +39,7 @@ export function renderAlbumLoadingState(container) {
     '</div>' +
     '<div class="album-workspace" aria-busy="true">' +
     '<aside class="album-sidebar">' +
-    '<div class="album-sleeve-frame skeleton-box"></div>' +
+    '<div class="album-cover-frame skeleton-box"></div>' +
     '<div class="album-specs-card">' +
     '<div class="skeleton-box" style="height:16px;width:50%;"></div>' +
     '<div class="skeleton-box" style="height:14px;width:100%;"></div>' +
@@ -781,12 +781,12 @@ export function renderAlbumView(
     '</div>' +
     '<div class="album-workspace">' +
     '<aside class="album-sidebar">' +
-    '<div class="album-sleeve-frame">' +
+    '<div class="album-cover-frame">' +
     '<img src="' +
     escapeHtml(coverUrl) +
     '" alt="' +
     safeTitle +
-    ' album sleeve" onerror="this.onerror=null;this.src=\'' +
+    ' album cover" onerror="this.onerror=null;this.src=\'' +
     escapeHtml(fallbackCover) +
     '\';" />' +
     '</div>' +

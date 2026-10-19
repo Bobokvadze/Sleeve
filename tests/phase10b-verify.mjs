@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 10B Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 10B Automated Verification Suite (Node.js)
  * Verifies:
  * 1. Route parsing contract (parseRouteHash) across all 8 views, direct album/collection links,
  *    and fallback recovery from invalid or malformed URL hashes.

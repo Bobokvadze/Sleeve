@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Music Taste Profile View Renderer (Phase 6 - Part 1)
+ * RATEPLAY - Music Taste Profile View Renderer (Phase 6 - Part 1)
  * Displays total rated albums, average album rating, highest-rated albums,
  * most frequently rated artists, recently rated albums, and shareable PNG actions.
  */
@@ -376,7 +376,7 @@ export function renderProfileView(container, profile) {
       '<div class="profile-hero-top">' +
       '<div>' +
       '<div class="discover-hero__eyebrow">' +
-      '<span>SLEEVE LISTENER ARCHIVE</span><span>//</span><span>MUSIC TASTE PROFILE</span>' +
+      '<span>RATEPLAY LISTENER ARCHIVE</span><span>//</span><span>MUSIC TASTE PROFILE</span>' +
       '</div>' +
       '<h1 class="discover-hero__title">Your Music Taste Profile</h1>' +
       '<p class="discover-hero__subtitle">Calculated automatically from your saved album and track ratings in localStorage.</p>' +
@@ -411,7 +411,7 @@ export function renderProfileView(container, profile) {
     '<div class="profile-hero-top">' +
     '<div>' +
     '<div class="discover-hero__eyebrow">' +
-    '<span>SLEEVE LISTENER ARCHIVE</span><span>//</span><span>MUSIC TASTE PROFILE</span>' +
+    '<span>RATEPLAY LISTENER ARCHIVE</span><span>//</span><span>MUSIC TASTE PROFILE</span>' +
     '</div>' +
     '<h1 class="discover-hero__title">Your Music Taste Profile</h1>' +
     '<p class="discover-hero__subtitle">Live archival synthesis of your top-scored records, most-listened artists, and recent rating activity.</p>' +

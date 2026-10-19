@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Custom & Smart Collections Domain Engine (Phases 9A & 9B)
+ * RATEPLAY - Custom & Smart Collections Domain Engine (Phases 9A & 9B)
  * Pure functions for:
  * - Enriching manual and rule-based smart collections
  * - Evaluating smart rules dynamically against existing ratings, metadata, and journal entries

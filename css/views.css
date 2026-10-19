@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SLEEVE DESIGN SYSTEM â€” VIEW LAYOUTS (DISCOVER & ALBUM TRACKLIST INSPECTOR)
+   RATEPLAY DESIGN SYSTEM â€” VIEW LAYOUTS (DISCOVER & ALBUM TRACKLIST INSPECTOR)
    ========================================================================== */
 
 /* Discover Hero & Search Console */
@@ -206,7 +206,7 @@
   }
 }
 
-/* Left Column: Sleeve Artwork & Record Specs */
+/* Left Column: Rateplay Artwork & Record Specs */
 .album-sidebar {
   position: sticky;
   top: 92px;
@@ -222,7 +222,7 @@
   }
 }
 
-.album-sleeve-frame {
+.album-cover-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -230,10 +230,10 @@
   overflow: hidden;
   background: var(--bg-surface);
   border: 1px solid var(--artwork-inner-border);
-  box-shadow: var(--shadow-sleeve);
+  box-shadow: var(--shadow-cover);
 }
 
-.album-sleeve-frame img {
+.album-cover-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;

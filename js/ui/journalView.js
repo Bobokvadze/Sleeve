@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Listening Journal View Renderer (Phase 8)
+ * RATEPLAY - Listening Journal View Renderer (Phase 8)
  * Renders the chronological list of album journal entries, summary metrics,
  * full-text search, mood tag & rating tier filters, sorting controls,
  * quick album picker for creating entries, and JSON Export/Import buttons.
@@ -267,7 +267,7 @@ export function renderJournalResultsMount(
       '</svg>' +
       '</div>' +
       '<h2 class="state-panel__title">Your Listening Journal is empty</h2>' +
-      '<p class="state-panel__desc">Record personal liner notes, mood tags, favorite tracks, and song-by-song reflections for any album in your library, or import a saved SLEEVE Journal JSON backup.</p>' +
+      '<p class="state-panel__desc">Record personal liner notes, mood tags, favorite tracks, and song-by-song reflections for any album in your library, or import a saved RATEPLAY Journal JSON backup.</p>' +
       '<div class="state-panel__actions">' +
       writeFirstBtnHtml +
       '<button type="button" class="btn btn-secondary" data-journal-action="open-journal-import-modal">Import Journal JSON</button>' +
@@ -450,7 +450,7 @@ export function renderJournalView(
     '<div class="library-header-panel__top">' +
     '<div>' +
     '<div class="discover-hero__eyebrow">' +
-    '<span>SLEEVE ARCHIVAL NOTEBOOK</span><span>//</span><span>LISTENING JOURNAL</span>' +
+    '<span>RATEPLAY ARCHIVAL NOTEBOOK</span><span>//</span><span>LISTENING JOURNAL</span>' +
     '</div>' +
     '<h1 class="discover-hero__title">Personal Listening Journal</h1>' +
     '<p class="discover-hero__subtitle">Long-form album reflections, favorite track picks, song-by-song liner notes, and mood tags stored alongside your collection.</p>' +
@@ -461,7 +461,7 @@ export function renderJournalView(
     ' title="Export your journal entries to a downloadable JSON file">' +
     'Export Journal JSON' +
     '</button>' +
-    '<button type="button" class="btn btn-secondary" data-journal-action="open-journal-import-modal" title="Import journal entries from a SLEEVE Journal JSON file">' +
+    '<button type="button" class="btn btn-secondary" data-journal-action="open-journal-import-modal" title="Import journal entries from a RATEPLAY Journal JSON file">' +
     'Import Journal JSON' +
     '</button>' +
     '</div>' +

@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Music Taste Profile Engine (Phase 6 - Part 1)
+ * RATEPLAY - Music Taste Profile Engine (Phase 6 - Part 1)
  * Pure aggregation functions that compute the user's music taste profile
  * directly from existing localStorage rating records and album metadata.
  */

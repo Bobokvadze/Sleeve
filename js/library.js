@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Personal Album Library Engine (Phase 4)
+ * RATEPLAY - Personal Album Library Engine (Phase 4)
  * Pure functions for reconstructing library cards, computing completion status,
  * filtering, sorting with deterministic tie-breakers, and calculating library summaries.
  */

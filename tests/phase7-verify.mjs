@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 7 Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 7 Automated Verification Suite (Node.js)
  * Verifies:
  * 1. JavaScript syntax across all 23 project modules
  * 2. Empty library safety across all Listening Insights sections (zero NaN/Infinity)
@@ -392,7 +392,7 @@ runTest('7. Share Insights 1080x1920 Canvas renders all 3 themes and never outpu
   renderListeningInsightsCardToCanvas(emptyCanvas, emptyPayload, {});
   assert.equal(emptyCanvas.width, 1080);
   assert.equal(emptyCanvas.height, 1920);
-  assert.equal(buildSanitizedInsightsFilename(), 'SLEEVE - Listening Insights.png');
+  assert.equal(buildSanitizedInsightsFilename(), 'RATEPLAY - Listening Insights.png');
 });
 
 console.log('\nAll ' + String(passed) + ' Phase 7 automated verification suites passed.\n');

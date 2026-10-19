@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 4 Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 4 Automated Verification Suite (Node.js)
  * Verifies all 13 required Phase 4 scenarios: syntax checks, empty library,
  * eligibility, deduplication, Phase 3 score parity, excluded track handling,
  * local search, all 5 sorting modes, summary stats, live rating updates,

@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Personalized Music Discovery Engine (Phase 6 - Part 2)
+ * RATEPLAY - Personalized Music Discovery Engine (Phase 6 - Part 2)
  * Uses the user's existing localStorage ratings as signals to:
  * 1. Highlight highly-rated artists the user has only rated 1-2 albums from.
  * 2. Discover additional unrated albums by highly-rated library artists via the

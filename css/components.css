@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SLEEVE DESIGN SYSTEM â€” REUSABLE UI COMPONENTS
+   RATEPLAY DESIGN SYSTEM â€” REUSABLE UI COMPONENTS
    Buttons, Search Console, Album Cards, Badges, Skeletons & Toasts
    ========================================================================== */
 
@@ -821,7 +821,7 @@ body.has-open-modal {
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sleeve);
+  box-shadow: var(--shadow-cover);
   display: flex;
   flex-direction: column;
   overflow: hidden;

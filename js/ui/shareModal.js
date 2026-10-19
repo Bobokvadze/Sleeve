@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Share Card Modal Controller (Phases 5, 6, 7 & 9B)
+ * RATEPLAY - Share Card Modal Controller (Phases 5, 6, 7 & 9B)
  * Supports:
  * 1. Album Review 1080x1920 Social Card ('album' mode)
  * 2. Music Taste Profile 1080x1920 Social Card ('profile' mode)
@@ -34,7 +34,7 @@ let modalState = {
   ratingsMap: {},
   metadataMap: {},
   journalMap: {},
-  lastFilename: 'SLEEVE - Album Review.png',
+  lastFilename: 'RATEPLAY - Album Review.png',
   renderToken: 0,
   triggerElement: null,
   onVerdictChange: null,
@@ -120,7 +120,7 @@ function ensureModalMount() {
     '</div>' +
     '<div class="share-spec-line">' +
     '<span>FILE NAME</span>' +
-    '<strong id="share-filename-preview">SLEEVE - Album.png</strong>' +
+    '<strong id="share-filename-preview">RATEPLAY - Album.png</strong>' +
     '</div>' +
     '<div class="share-modal__actions">' +
     '<button type="button" class="btn btn-primary share-download-btn" id="share-download-png-btn" data-share-action="download-png">' +
@@ -244,7 +244,7 @@ function updateAccessibleCardSummary(root, payload) {
 
   if (modalState.mode === 'collection') {
     srEl.textContent =
-      'SLEEVE Collection Poster for ' +
+      'RATEPLAY Collection Poster for ' +
       payload.collectionTitle +
       '. ' +
       String(payload.albumCount) +
@@ -256,7 +256,7 @@ function updateAccessibleCardSummary(root, payload) {
 
   if (modalState.mode === 'insights') {
     srEl.textContent =
-      'SLEEVE Listening Insights card. Total rated albums: ' +
+      'RATEPLAY Listening Insights card. Total rated albums: ' +
       String(payload.totalRatedAlbums) +
       '. Average rating: ' +
       payload.formattedAverageScore +
@@ -271,7 +271,7 @@ function updateAccessibleCardSummary(root, payload) {
     const topAlb = payload.topAlbums[0]?.title || 'None';
     const topArt = payload.topArtists[0]?.artistName || 'None';
     srEl.textContent =
-      'SLEEVE Music Taste Profile card. Total rated albums: ' +
+      'RATEPLAY Music Taste Profile card. Total rated albums: ' +
       String(payload.totalRatedAlbums) +
       '. Average rating: ' +
       payload.formattedAverageRating +
@@ -294,7 +294,7 @@ function updateAccessibleCardSummary(root, payload) {
   const verdictText = payload.hasVerdict ? 'Verdict: ' + payload.verdict : '';
 
   srEl.textContent =
-    'SLEEVE review card for ' +
+    'RATEPLAY review card for ' +
     payload.albumTitle +
     ' by ' +
     payload.artistName +
@@ -373,7 +373,7 @@ async function scheduleModalCanvasRedraw() {
     }
     updateAccessibleCardSummary(root, payload);
   } catch (err) {
-    console.warn('[SLEEVE Share Modal] Canvas render error:', err);
+    console.warn('[RATEPLAY Share Modal] Canvas render error:', err);
   } finally {
     if (token === modalState.renderToken && loadingEl) {
       loadingEl.hidden = true;

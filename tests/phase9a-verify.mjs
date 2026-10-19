@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 9A Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 9A Automated Verification Suite (Node.js)
  * Verifies:
  * 1. JavaScript syntax across all 30 project modules
  * 2. Collection CRUD: create, rename/update title/description/theme, and delete

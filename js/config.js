@@ -1,9 +1,9 @@
 /**
- * SLEEVE - Configuration, Formatting Utilities & Curated Starter Catalog
+ * RATEPLAY - Configuration, Formatting Utilities & Curated Starter Catalog
  */
 
 export const APP_CONFIG = {
-  appName: 'SLEEVE',
+  appName: 'RATEPLAY',
   tagline: 'Listen in Full',
   itunesSearchUrl: 'https://itunes.apple.com/search',
   itunesLookupUrl: 'https://itunes.apple.com/lookup',
@@ -35,7 +35,7 @@ export const QUICK_DISCOVERY_QUERIES = [
 
 export function getHighResArtwork(artworkUrl, size = 600) {
   if (!artworkUrl || typeof artworkUrl !== 'string') {
-    return createFallbackCoverDataUri('SLEEVE');
+    return createFallbackCoverDataUri('RATEPLAY');
   }
   const targetSize = String(size) + 'x' + String(size) + 'bb.';
   return artworkUrl.replace(/\/\d+x\d+bb\.(jpg|png|webp)/i, function (match, ext) {
@@ -49,7 +49,7 @@ export function createFallbackCoverDataUri(title = 'ALBUM') {
       .replace(/[^a-zA-Z0-9 ]+/g, '')
       .trim()
       .slice(0, 2)
-      .toUpperCase() || 'SL';
+      .toUpperCase() || 'RP';
   const svg =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">' +
     '<rect width="400" height="400" fill="#131316"/>' +

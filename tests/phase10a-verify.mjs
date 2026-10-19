@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 10A Regression & Audit Fix Verification Suite (Node.js)
+ * RATEPLAY - Phase 10A Regression & Audit Fix Verification Suite (Node.js)
  * Verifies all 5 fixes from the technical audit:
  * 1. Missing Phase 9B imports in js/app.js are resolved and bound to valid exported functions.
  * 2. All ES module imports in js/canvas-card.js are consolidated at the top of the file.
@@ -249,7 +249,7 @@ runTest('4. Library JSON export/import preserves Custom and Smart Collections, h
 
   // Backward compatibility: importing a legacy v1 file without collectionsMap preserves all 3 collections
   const legacyExportJson = JSON.stringify({
-    format: 'SLEEVE_LIBRARY_EXPORT',
+    format: 'RATEPLAY_LIBRARY_EXPORT',
     version: 1,
     ratingsMap: {
       '1146195596': {

@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Library JSON Export, Validation, Preview & Safe Merge Engine (Phases 6 & 10A)
+ * RATEPLAY - Library JSON Export, Validation, Preview & Safe Merge Engine (Phases 6 & 10A)
  * Pure functions + browser download helper for exporting and importing the user's
  * personal ratings, album metadata, and custom/smart collections without overwriting
  * existing data by default. Maintains full backward compatibility with v1 exports.
@@ -22,7 +22,8 @@ import {
   commitMergedLibraryMaps
 } from './storage.js';
 
-export const EXPORT_FORMAT_ID = 'SLEEVE_LIBRARY_EXPORT';
+export const EXPORT_FORMAT_ID = 'RATEPLAY_LIBRARY_EXPORT';
+export const LEGACY_EXPORT_FORMAT_ID = 'RATEPLAY_LIBRARY_EXPORT';
 export const EXPORT_FORMAT_VERSION = 1;
 
 /**
@@ -34,7 +35,7 @@ export function buildExportFilename(dateObj = new Date()) {
   const yyyy = String(safeDate.getFullYear());
   const mm = String(safeDate.getMonth() + 1).padStart(2, '0');
   const dd = String(safeDate.getDate()).padStart(2, '0');
-  return 'SLEEVE-Library-Backup-' + yyyy + '-' + mm + '-' + dd + '.json';
+  return 'RATEPLAY-Library-Backup-' + yyyy + '-' + mm + '-' + dd + '.json';
 }
 
 /**
@@ -154,7 +155,7 @@ export function buildLibraryExportPayload(
   return {
     format: EXPORT_FORMAT_ID,
     version: EXPORT_FORMAT_VERSION,
-    app: 'SLEEVE',
+    app: 'RATEPLAY',
     exportedAt: new Date().toISOString(),
     summary: {
       albumCount,
@@ -417,7 +418,7 @@ export function validateAndPreviewLibraryImport(
   if (typeof rawJsonText !== 'string' || !rawJsonText.trim()) {
     return {
       ok: false,
-      error: 'The selected file is empty. Please choose a valid SLEEVE JSON backup file.'
+      error: 'The selected file is empty. Please choose a valid RATEPLAY JSON backup file.'
     };
   }
 
@@ -438,7 +439,7 @@ export function validateAndPreviewLibraryImport(
     };
   }
 
-  if (parsed.format !== undefined && parsed.format !== EXPORT_FORMAT_ID) {
+  if (parsed.format !== undefined && parsed.format !== EXPORT_FORMAT_ID && parsed.format !== LEGACY_EXPORT_FORMAT_ID) {
     return {
       ok: false,
       error:
@@ -459,7 +460,7 @@ export function validateAndPreviewLibraryImport(
       error:
         'Unsupported export version (' +
         String(parsed.version) +
-        '). This version of SLEEVE supports version ' +
+        '). This version of RATEPLAY supports version ' +
         String(EXPORT_FORMAT_VERSION) +
         '.'
     };
@@ -491,7 +492,7 @@ export function validateAndPreviewLibraryImport(
     return {
       ok: false,
       error:
-        'Missing required "ratingsMap" field. Make sure you selected a SLEEVE Library export file.'
+        'Missing required "ratingsMap" field. Make sure you selected a RATEPLAY Library export file.'
     };
   }
 

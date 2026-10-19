@@ -1,5 +1,5 @@
 /**
- * SLEEVE - My Library View Renderer (Phase 4 & Phase 6 Part 2)
+ * RATEPLAY - My Library View Renderer (Phase 4 & Phase 6 Part 2)
  * Renders the Library Summary dashboard, Export/Import JSON portability controls,
  * search/filter/sort controls, responsive personal album cards, and empty states.
  */
@@ -266,7 +266,7 @@ export function renderLibraryResultsMount(mountEl, queryResult, uiState) {
       '</svg>' +
       '</div>' +
       '<h2 class="state-panel__title">Your personal library is empty</h2>' +
-      '<p class="state-panel__desc">Albums appear here automatically as soon as you rate at least one track. Head to Discover to inspect a record or import a previously exported SLEEVE JSON backup.</p>' +
+      '<p class="state-panel__desc">Albums appear here automatically as soon as you rate at least one track. Head to Discover to inspect a record or import a previously exported RATEPLAY JSON backup.</p>' +
       hiddenNoticeHtml +
       '<div class="state-panel__actions">' +
       '<button type="button" class="btn btn-primary" data-action="back-to-discover">Explore Albums in Discover</button>' +
@@ -398,7 +398,7 @@ export function renderLibraryView(container, queryResult, uiState) {
     '<div class="library-header-panel__top">' +
     '<div>' +
     '<div class="discover-hero__eyebrow">' +
-    '<span>SLEEVE PERSONAL ARCHIVE</span><span>//</span><span>MY LIBRARY</span>' +
+    '<span>RATEPLAY PERSONAL ARCHIVE</span><span>//</span><span>MY LIBRARY</span>' +
     '</div>' +
     '<h1 class="discover-hero__title">Your Rated Record Shelf</h1>' +
     '<p class="discover-hero__subtitle">Every album you have rated is cataloged below with live score calculations, completion tracking, and JSON backup portability.</p>' +
@@ -409,7 +409,7 @@ export function renderLibraryView(container, queryResult, uiState) {
     ' title="Export your ratings and album metadata to a downloadable JSON file">' +
     'Export Library JSON' +
     '</button>' +
-    '<button type="button" class="btn btn-secondary" data-library-action="open-import-modal" title="Import ratings and metadata from a SLEEVE JSON backup file">' +
+    '<button type="button" class="btn btn-secondary" data-library-action="open-import-modal" title="Import ratings and metadata from a RATEPLAY JSON backup file">' +
     'Import Library JSON' +
     '</button>' +
     '<button type="button" class="btn btn-ghost" data-action="go-to-profile">Taste Profile</button>' +

@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Browser Storage Manager (localStorage)
+ * RATEPLAY - Browser Storage Manager (localStorage)
  * Persists user track ratings, interlude/inclusion flags, optional verdict,
  * and library visibility in 'sleeve_ratings_v1', and caches compact external
  * album metadata separately in 'sleeve_album_meta_v1'.
@@ -148,7 +148,7 @@ export function getSavedRatingsMap() {
     lastStorageError = err;
     if (!customStorageBackend && typeof window !== 'undefined') {
       console.warn(
-        '[SLEEVE Storage] Stored ratings JSON could not be parsed; returning empty state.'
+        '[RATEPLAY Storage] Stored ratings JSON could not be parsed; returning empty state.'
       );
     }
     return {};
@@ -165,7 +165,7 @@ function writeSavedRatingsMap(map) {
     return true;
   } catch (err) {
     lastStorageError = err;
-    console.warn('[SLEEVE Storage] Unable to persist ratings map (quota or storage error):', err);
+    console.warn('[RATEPLAY Storage] Unable to persist ratings map (quota or storage error):', err);
     return false;
   }
 }
@@ -213,7 +213,7 @@ export function getAlbumCatalogCacheMap() {
     lastStorageError = err;
     if (!customStorageBackend && typeof window !== 'undefined') {
       console.warn(
-        '[SLEEVE Storage] Stored album metadata JSON could not be parsed; returning empty state.'
+        '[RATEPLAY Storage] Stored album metadata JSON could not be parsed; returning empty state.'
       );
     }
     return {};
@@ -266,7 +266,7 @@ export function saveAlbumMetadataToCache(album, trackCountOverride = null) {
     return true;
   } catch (err) {
     lastStorageError = err;
-    console.warn('[SLEEVE Storage] Unable to cache album metadata:', err);
+    console.warn('[RATEPLAY Storage] Unable to cache album metadata:', err);
     return false;
   }
 }
@@ -478,7 +478,7 @@ export function saveRecentSearch(query) {
     const updated = [cleaned, ...existing].slice(0, 6);
     storage.setItem(APP_CONFIG.storageKeys.recentQueries, JSON.stringify(updated));
   } catch (err) {
-    console.warn('[SLEEVE Storage] Unable to persist recent search:', err);
+    console.warn('[RATEPLAY Storage] Unable to persist recent search:', err);
   }
 }
 
@@ -508,7 +508,7 @@ export function createPreImportLocalBackup() {
     return snapshot;
   } catch (err) {
     lastStorageError = err;
-    console.warn('[SLEEVE Storage] Unable to write pre-import backup:', err);
+    console.warn('[RATEPLAY Storage] Unable to write pre-import backup:', err);
     return null;
   }
 }
@@ -865,7 +865,7 @@ export function getSavedJournalMap() {
     lastStorageError = err;
     if (!customStorageBackend && typeof window !== 'undefined') {
       console.warn(
-        '[SLEEVE Storage] Stored journal JSON could not be parsed; returning empty state.'
+        '[RATEPLAY Storage] Stored journal JSON could not be parsed; returning empty state.'
       );
     }
     return {};
@@ -882,7 +882,7 @@ function writeSavedJournalMap(map) {
     return true;
   } catch (err) {
     lastStorageError = err;
-    console.warn('[SLEEVE Storage] Unable to persist journal map:', err);
+    console.warn('[RATEPLAY Storage] Unable to persist journal map:', err);
     return false;
   }
 }
@@ -1311,7 +1311,7 @@ export function getSavedCollectionsMap() {
     lastStorageError = err;
     if (!customStorageBackend && typeof window !== 'undefined') {
       console.warn(
-        '[SLEEVE Storage] Stored collections JSON could not be parsed; returning empty state.'
+        '[RATEPLAY Storage] Stored collections JSON could not be parsed; returning empty state.'
       );
     }
     return {};
@@ -1328,7 +1328,7 @@ function writeSavedCollectionsMap(map) {
     return true;
   } catch (err) {
     lastStorageError = err;
-    console.warn('[SLEEVE Storage] Unable to persist collections map:', err);
+    console.warn('[RATEPLAY Storage] Unable to persist collections map:', err);
     return false;
   }
 }

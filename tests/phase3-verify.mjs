@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 3 Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 3 Automated Verification Suite (Node.js)
  * Runs syntax checks across all project JS files and executes the 10 unit tests.
  */
 
@@ -77,7 +77,7 @@ function runTest(name, fn) {
   }
 }
 
-console.log('\nRunning SLEEVE Phase 3 Automated Verification Suite...');
+console.log('\nRunning RATEPLAY Phase 3 Automated Verification Suite...');
 
 runTest('1 & 2. Rating 8.0 and 6.0 produces 7.0; unrated tracks are ignored', () => {
   const map = {

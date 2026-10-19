@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Listening Insights & Taste DNA Engine (Phase 7)
+ * RATEPLAY - Listening Insights & Taste DNA Engine (Phase 7)
  * Pure functions computing:
  * 1. Taste DNA (top artists, available genres, preferred decades, and explicit metadata coverage)
  * 2. Rating Distribution (mean, median, scored vs unscored counts, and tier distribution bars)
@@ -653,7 +653,7 @@ export function identifyHiddenGems(entries = [], { minScore = 7.5, limit = 6 } =
   );
 
   const methodologyText =
-    'Selected strictly from your local SLEEVE library: albums scored ' +
+    'Selected strictly from your local RATEPLAY library: albums scored ' +
     minScore.toFixed(1) +
     '+ that either represent an artist you have only rated once in your library or have fewer logged track ratings than your collection median. No external streaming or commercial popularity data is assumed.';
 

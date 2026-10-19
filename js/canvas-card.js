@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Browser-Native 1080x1920 Social Review Card Generator (Phase 5)
+ * RATEPLAY - Browser-Native 1080x1920 Social Review Card Generator (Phase 5)
  * Uses pure HTML5 2D Canvas API with zero external screenshot or color libraries.
  */
 
@@ -64,7 +64,7 @@ export const CARD_THEMES = {
   signal: {
     id: 'signal',
     name: 'Signal',
-    tagline: 'Hero sleeve stage & studio contrast',
+    tagline: 'Hero cover stage & studio contrast',
     isLight: false,
     bgCanvas: '#08080A',
     bgSurface: '#111115',
@@ -109,7 +109,7 @@ export function sanitizeCardText(value, fallback = '') {
 
 /**
  * Generates a clean, predictable, filesystem-safe PNG filename:
- * "SLEEVE - Artist - Album.png"
+ * "RATEPLAY - Artist - Album.png"
  */
 export function buildSanitizedCardFilename(artistName, albumName) {
   const cleanPart = (input, fallback) => {
@@ -124,7 +124,7 @@ export function buildSanitizedCardFilename(artistName, albumName) {
 
   const safeArtist = cleanPart(artistName, 'Unknown Artist');
   const safeAlbum = cleanPart(albumName, 'Untitled Album');
-  return 'SLEEVE - ' + safeArtist + ' - ' + safeAlbum + '.png';
+  return 'RATEPLAY - ' + safeArtist + ' - ' + safeAlbum + '.png';
 }
 
 export function resolveCardTheme(themeId) {
@@ -453,9 +453,9 @@ export function wrapTextLines(ctx, text, maxWidth, maxLines = 2) {
 }
 
 /**
- * Draws either the loaded CORS-safe album cover or a refined archival vinyl sleeve fallback.
+ * Draws either the loaded CORS-safe album cover or a refined archival vinyl rateplay fallback.
  */
-function drawSleeveArtwork(ctx, img, x, y, size, payload) {
+function drawAlbumArtwork(ctx, img, x, y, size, payload) {
   const { theme, albumTitle, artistName } = payload;
 
   ctx.save();
@@ -465,7 +465,7 @@ function drawSleeveArtwork(ctx, img, x, y, size, payload) {
   if (img) {
     ctx.drawImage(img, x, y, size, size);
   } else {
-    // Procedural editorial vinyl/sleeve fallback when artwork is unavailable or CORS-blocked
+    // Procedural editorial vinyl/rateplay fallback when artwork is unavailable or CORS-blocked
     ctx.fillStyle = theme.bgElevated;
     ctx.fillRect(x, y, size, size);
 
@@ -496,11 +496,11 @@ function drawSleeveArtwork(ctx, img, x, y, size, payload) {
 
     // Initials on center label
     const initials =
-      sanitizeCardText(albumTitle, 'SL')
+      sanitizeCardText(albumTitle, 'RP')
         .replace(/[^a-zA-Z0-9 ]+/g, '')
         .trim()
         .slice(0, 2)
-        .toUpperCase() || 'SL';
+        .toUpperCase() || 'RP';
 
     ctx.fillStyle = '#0B0B0C';
     ctx.font = '700 ' + String(Math.round(size * 0.085)) + 'px "JetBrains Mono", monospace';
@@ -508,7 +508,7 @@ function drawSleeveArtwork(ctx, img, x, y, size, payload) {
     ctx.textBaseline = 'middle';
     ctx.fillText(initials, cx, cy);
 
-    // Subtle archival caption at bottom of sleeve
+    // Subtle archival caption at bottom of cover
     ctx.fillStyle = theme.textMuted;
     ctx.font = '600 ' + String(Math.round(size * 0.036)) + 'px "JetBrains Mono", monospace';
     ctx.fillText(
@@ -528,7 +528,7 @@ function drawSleeveArtwork(ctx, img, x, y, size, payload) {
 }
 
 /**
- * Renders the complete 1080x1920 SLEEVE social review graphic onto a <canvas>.
+ * Renders the complete 1080x1920 RATEPLAY social review graphic onto a <canvas>.
  */
 export function renderReviewCardToCanvas(canvas, payload, artworkImage = null) {
   if (!canvas || typeof canvas.getContext !== 'function') {
@@ -581,7 +581,7 @@ export function renderReviewCardToCanvas(canvas, payload, artworkImage = null) {
   // -----------------------------------------------------------------------
   const headerY = 82;
 
-  // Brand emblem icon (sleeve + vinyl disc)
+  // Brand emblem icon (rateplay + vinyl disc)
   fillRoundedRect(ctx, padX, headerY, 34, 42, 4, theme.bgSurface, theme.textPrimary, 2.5);
   ctx.fillStyle = theme.accent;
   ctx.fillRect(padX + 7, headerY + 9, 16, 4);
@@ -598,7 +598,7 @@ export function renderReviewCardToCanvas(canvas, payload, artworkImage = null) {
   // Brand Wordmark
   ctx.fillStyle = theme.textPrimary;
   ctx.font = '700 32px "Space Grotesk", sans-serif';
-  ctx.fillText('SLEEVE', padX + 68, headerY + 26);
+  ctx.fillText('RATEPLAY', padX + 68, headerY + 26);
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '500 13px "JetBrains Mono", monospace';
@@ -633,8 +633,8 @@ export function renderReviewCardToCanvas(canvas, payload, artworkImage = null) {
   const heroTopY = 176;
   const coverSize = theme.id === 'signal' ? 380 : 360;
 
-  // Draw Album Sleeve Artwork on Left
-  drawSleeveArtwork(ctx, artworkImage, padX, heroTopY, coverSize, payload);
+  // Draw Album Cover Artwork on Left
+  drawAlbumArtwork(ctx, artworkImage, padX, heroTopY, coverSize, payload);
 
   // Right Identity & Score Column
   const infoX = padX + coverSize + 44;
@@ -1054,7 +1054,7 @@ export function renderReviewCardToCanvas(canvas, payload, artworkImage = null) {
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '700 16px "JetBrains Mono", monospace';
-  ctx.fillText('SLEEVE // LISTEN IN FULL', padX, footerTopY + 38);
+  ctx.fillText('RATEPLAY // LISTEN IN FULL', padX, footerTopY + 38);
 
   const footerRightText =
     'RATED ' +
@@ -1101,7 +1101,7 @@ export async function downloadCanvasAsPng(canvas, filename) {
     throw new Error('Canvas download requires a browser document environment.');
   }
 
-  const safeFilename = sanitizeCardText(filename, 'SLEEVE - Album Review.png');
+  const safeFilename = sanitizeCardText(filename, 'RATEPLAY - Album Review.png');
 
   const triggerDownloadUrl = (url, revokeAfter = false) => {
     const link = document.createElement('a');
@@ -1148,7 +1148,7 @@ export function buildSanitizedProfileFilename(customLabel = 'Taste Profile') {
     .replace(/\s+/g, ' ')
     .trim()
     .slice(0, 50) || 'Taste Profile';
-  return 'SLEEVE - ' + safePart + '.png';
+  return 'RATEPLAY - ' + safePart + '.png';
 }
 
 /**
@@ -1238,8 +1238,8 @@ export function prepareTasteProfileCardPayload({
       : profile.recentlyRatedAlbums;
 
   const mosaicItems = mosaicCandidateEntries.slice(0, 4).map((alb) => ({
-    title: sanitizeCardText(alb.collectionName, 'SL'),
-    artist: sanitizeCardText(alb.artistName, 'SLEEVE'),
+    title: sanitizeCardText(alb.collectionName, 'RP'),
+    artist: sanitizeCardText(alb.artistName, 'RATEPLAY'),
     artworkUrl: alb.coverUrl || ''
   }));
 
@@ -1333,7 +1333,7 @@ export function renderTasteProfileCardToCanvas(canvas, payload, loadedImagesMap 
 
   ctx.fillStyle = theme.textPrimary;
   ctx.font = '700 32px "Space Grotesk", sans-serif';
-  ctx.fillText('SLEEVE', padX + 68, headerY + 26);
+  ctx.fillText('RATEPLAY', padX + 68, headerY + 26);
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '500 13px "JetBrains Mono", monospace';
@@ -1358,7 +1358,7 @@ export function renderTasteProfileCardToCanvas(canvas, payload, loadedImagesMap 
   ctx.stroke();
 
   // -----------------------------------------------------------------------
-  // 3. Hero Overview & 2x2 Sleeve Mosaic (y = 172 .. 492)
+  // 3. Hero Overview & 2x2 Cover Mosaic (y = 172 .. 492)
   // -----------------------------------------------------------------------
   const heroY = 172;
   const mosaicSize = 316;
@@ -1466,12 +1466,12 @@ export function renderTasteProfileCardToCanvas(canvas, payload, loadedImagesMap 
     const cx = mosaicX + col * (cellSize + cellGap);
     const cy = heroY + row * (cellSize + cellGap);
     const item = payload.mosaicItems[slot] || payload.mosaicItems[0] || {
-      title: 'SL',
-      artist: 'SLEEVE',
+      title: 'RP',
+      artist: 'RATEPLAY',
       artworkUrl: ''
     };
     const imgObj = item.artworkUrl ? safeImages[item.artworkUrl] || null : null;
-    drawSleeveArtwork(
+    drawAlbumArtwork(
       ctx,
       imgObj,
       cx,
@@ -1559,7 +1559,7 @@ export function renderTasteProfileCardToCanvas(canvas, payload, loadedImagesMap 
       const thumbX = padX + 94;
       const thumbY = ry + 10;
       const albImg = alb.artworkUrl ? safeImages[alb.artworkUrl] || null : null;
-      drawSleeveArtwork(ctx, albImg, thumbX, thumbY, thumbSize, {
+      drawAlbumArtwork(ctx, albImg, thumbX, thumbY, thumbSize, {
         theme,
         albumTitle: alb.title,
         artistName: alb.artist
@@ -1800,7 +1800,7 @@ export function renderTasteProfileCardToCanvas(canvas, payload, loadedImagesMap 
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '700 16px "JetBrains Mono", monospace';
-  ctx.fillText('SLEEVE // LISTEN IN FULL', padX, footerTopY + 38);
+  ctx.fillText('RATEPLAY // LISTEN IN FULL', padX, footerTopY + 38);
 
   const footerRightText =
     String(payload.totalRatedAlbums) +
@@ -1866,7 +1866,7 @@ export function buildSanitizedInsightsFilename(customLabel = 'Listening Insights
       .replace(/\s+/g, ' ')
       .trim()
       .slice(0, 50) || 'Listening Insights';
-  return 'SLEEVE - ' + safePart + '.png';
+  return 'RATEPLAY - ' + safePart + '.png';
 }
 
 /**
@@ -1939,8 +1939,8 @@ export function prepareListeningInsightsCardPayload({
       : insights.allEntries;
 
   const mosaicItems = mosaicCandidates.slice(0, 4).map((alb) => ({
-    title: sanitizeCardText(alb.collectionName, 'SL'),
-    artist: sanitizeCardText(alb.artistName, 'SLEEVE'),
+    title: sanitizeCardText(alb.collectionName, 'RP'),
+    artist: sanitizeCardText(alb.artistName, 'RATEPLAY'),
     artworkUrl: alb.coverUrl || ''
   }));
 
@@ -2048,7 +2048,7 @@ export function renderListeningInsightsCardToCanvas(canvas, payload, loadedImage
 
   ctx.fillStyle = theme.textPrimary;
   ctx.font = '700 32px "Space Grotesk", sans-serif';
-  ctx.fillText('SLEEVE', padX + 68, headerY + 26);
+  ctx.fillText('RATEPLAY', padX + 68, headerY + 26);
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '500 13px "JetBrains Mono", monospace';
@@ -2157,12 +2157,12 @@ export function renderListeningInsightsCardToCanvas(canvas, payload, loadedImage
     const cx = mosaicX + col * (cellSize + cellGap);
     const cy = heroY + row * (cellSize + cellGap);
     const item = payload.mosaicItems[slot] || payload.mosaicItems[0] || {
-      title: 'SL',
-      artist: 'SLEEVE',
+      title: 'RP',
+      artist: 'RATEPLAY',
       artworkUrl: ''
     };
     const imgObj = item.artworkUrl ? safeImages[item.artworkUrl] || null : null;
-    drawSleeveArtwork(ctx, imgObj, cx, cy, cellSize, {
+    drawAlbumArtwork(ctx, imgObj, cx, cy, cellSize, {
       theme,
       albumTitle: item.title,
       artistName: item.artist
@@ -2390,7 +2390,7 @@ export function renderListeningInsightsCardToCanvas(canvas, payload, loadedImage
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '700 16px "JetBrains Mono", monospace';
-  ctx.fillText('SLEEVE // LISTEN IN FULL', padX, footerTopY + 38);
+  ctx.fillText('RATEPLAY // LISTEN IN FULL', padX, footerTopY + 38);
 
   const footerRightText =
     String(payload.totalRatedAlbums) +
@@ -2460,7 +2460,7 @@ export function buildSanitizedCollectionPosterFilename(collectionTitle = 'Collec
       .replace(/\s+/g, ' ')
   );
   const safeTitle = cleaned.slice(0, 56) || 'Collection';
-  return 'SLEEVE - Collection - ' + safeTitle + '.png';
+  return 'RATEPLAY - Collection - ' + safeTitle + '.png';
 }
 
 /**
@@ -2524,8 +2524,8 @@ export function prepareCollectionPosterPayload({
     : 'Curated Record Shelf';
 
   const mosaicItems = enriched.albums.slice(0, 4).map((alb) => ({
-    title: sanitizeCardText(alb.collectionName, 'SL'),
-    artist: sanitizeCardText(alb.artistName, 'SLEEVE'),
+    title: sanitizeCardText(alb.collectionName, 'RP'),
+    artist: sanitizeCardText(alb.artistName, 'RATEPLAY'),
     artworkUrl: alb.artworkUrl100 ? getHighResArtwork(alb.artworkUrl100, 600) : ''
   }));
 
@@ -2644,7 +2644,7 @@ export function renderCollectionPosterToCanvas(canvas, payload, loadedImagesMap 
 
   ctx.fillStyle = theme.textPrimary;
   ctx.font = '700 32px "Space Grotesk", sans-serif';
-  ctx.fillText('SLEEVE', padX + 68, headerY + 26);
+  ctx.fillText('RATEPLAY', padX + 68, headerY + 26);
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '500 13px "JetBrains Mono", monospace';
@@ -2671,7 +2671,7 @@ export function renderCollectionPosterToCanvas(canvas, payload, loadedImagesMap 
   ctx.stroke();
 
   // -----------------------------------------------------------------------
-  // 3. Collection Identity & 2x2 Sleeve Showcase (y = 172 .. 532)
+  // 3. Collection Identity & 2x2 Cover Showcase (y = 172 .. 532)
   // -----------------------------------------------------------------------
   const heroY = 172;
   const mosaicSize = 356;
@@ -2761,11 +2761,11 @@ export function renderCollectionPosterToCanvas(canvas, payload, loadedImagesMap 
     const cy = heroY + row * (cellSize + cellGap);
     const item = payload.mosaicItems[slot] || payload.mosaicItems[0] || {
       title: payload.collectionTitle,
-      artist: 'SLEEVE',
+      artist: 'RATEPLAY',
       artworkUrl: ''
     };
     const imgObj = item.artworkUrl ? safeImages[item.artworkUrl] || null : null;
-    drawSleeveArtwork(ctx, imgObj, cx, cy, cellSize, {
+    drawAlbumArtwork(ctx, imgObj, cx, cy, cellSize, {
       theme,
       albumTitle: item.title,
       artistName: item.artist
@@ -2911,7 +2911,7 @@ export function renderCollectionPosterToCanvas(canvas, payload, loadedImagesMap 
       const thumbX = rx + 62;
       const thumbY = ry + Math.round((rowH - 10 - thumbSize) / 2);
       const albImg = alb.artworkUrl ? safeImages[alb.artworkUrl] || null : null;
-      drawSleeveArtwork(ctx, albImg, thumbX, thumbY, thumbSize, {
+      drawAlbumArtwork(ctx, albImg, thumbX, thumbY, thumbSize, {
         theme,
         albumTitle: alb.title,
         artistName: alb.artist
@@ -2964,7 +2964,7 @@ export function renderCollectionPosterToCanvas(canvas, payload, loadedImagesMap 
 
   ctx.fillStyle = theme.textMuted;
   ctx.font = '700 16px "JetBrains Mono", monospace';
-  ctx.fillText('SLEEVE // LISTEN IN FULL', padX, footerTopY + 38);
+  ctx.fillText('RATEPLAY // LISTEN IN FULL', padX, footerTopY + 38);
 
   const footerRightText =
     String(payload.albumCount) +

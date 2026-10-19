@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Pure Album Score & Track Highlights Calculator (Phase 3 & 4)
+ * RATEPLAY - Pure Album Score & Track Highlights Calculator (Phase 3 & 4)
  */
 
 export const RATING_MIN = 1.0;

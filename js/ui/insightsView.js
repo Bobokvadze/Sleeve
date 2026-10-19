@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Listening Insights View Renderer (Phase 7)
+ * RATEPLAY - Listening Insights View Renderer (Phase 7)
  * Renders:
  * 1. Taste DNA (top artists, available genres, preferred decades, and metadata coverage)
  * 2. Rating Distribution (mean, median, total rated/scored albums, and visual tier bars)
@@ -632,7 +632,7 @@ export function renderInsightsView(container, insights, uiState = {}) {
       '<div class="profile-hero-top">' +
       '<div>' +
       '<div class="discover-hero__eyebrow">' +
-      '<span>SLEEVE ANALYTICS ENGINE</span><span>//</span><span>LISTENING INSIGHTS</span>' +
+      '<span>RATEPLAY ANALYTICS ENGINE</span><span>//</span><span>LISTENING INSIGHTS</span>' +
       '</div>' +
       '<h1 class="discover-hero__title">Listening Insights &amp; Taste DNA</h1>' +
       '<p class="discover-hero__subtitle">Deep statistical breakdown of your rating distribution, sample-weighted artist rankings, release decades, and local library hidden gems.</p>' +
@@ -652,7 +652,7 @@ export function renderInsightsView(container, insights, uiState = {}) {
       '</svg>' +
       '</div>' +
       '<h2 class="state-panel__title">No rated albums to analyze yet</h2>' +
-      '<p class="state-panel__desc">Rate tracks on any album in Discover (or import a SLEEVE library backup) to unlock your Taste DNA, Rating Distribution, Artist Rankings, Decade Breakdown, and Hidden Gems.</p>' +
+      '<p class="state-panel__desc">Rate tracks on any album in Discover (or import a RATEPLAY library backup) to unlock your Taste DNA, Rating Distribution, Artist Rankings, Decade Breakdown, and Hidden Gems.</p>' +
       '<div class="state-panel__actions">' +
       '<button type="button" class="btn btn-primary" data-action="back-to-discover">Explore Albums in Discover</button>' +
       '<button type="button" class="btn btn-secondary" data-library-action="open-import-modal">Import Library JSON</button>' +
@@ -666,7 +666,7 @@ export function renderInsightsView(container, insights, uiState = {}) {
     '<div class="profile-hero-top">' +
     '<div>' +
     '<div class="discover-hero__eyebrow">' +
-    '<span>SLEEVE ANALYTICS ENGINE</span><span>//</span><span>LISTENING INSIGHTS</span>' +
+    '<span>RATEPLAY ANALYTICS ENGINE</span><span>//</span><span>LISTENING INSIGHTS</span>' +
     '</div>' +
     '<h1 class="discover-hero__title">Listening Insights &amp; Taste DNA</h1>' +
     '<p class="discover-hero__subtitle">Derived strictly from your saved ratings in localStorage with explicit sample sizes and metadata coverage reporting.</p>' +

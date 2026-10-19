@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Custom & Smart Collections View & Editor Modal Renderer (Phases 9A & 9B)
+ * RATEPLAY - Custom & Smart Collections View & Editor Modal Renderer (Phases 9A & 9B)
  * Renders:
  * 1. Collections Index View (manual & smart collections grid, rule badges, Poster actions)
  * 2. Collection Detail View (active smart rule chips with one-click rule removal,
@@ -255,7 +255,7 @@ export function renderCollectionsIndexView(container, collections = []) {
     '<div class="library-header-panel__top">' +
     '<div>' +
     '<div class="discover-hero__eyebrow">' +
-    '<span>SLEEVE CURATION ENGINE</span><span>//</span><span>CUSTOM &amp; SMART COLLECTIONS</span>' +
+    '<span>RATEPLAY CURATION ENGINE</span><span>//</span><span>CUSTOM &amp; SMART COLLECTIONS</span>' +
     '</div>' +
     '<h1 class="discover-hero__title">Album Collections &amp; Smart Shelves</h1>' +
     '<p class="discover-hero__subtitle">Curate hand-sequenced shelves, build dynamic rule-based Smart Collections, and export 1080&times;1920 Collection Posters.</p>' +

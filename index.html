@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SLEEVE — Listen in Full | Album Rating &amp; Review Platform</title>
-  <meta name="description" content="Discover albums, inspect full tracklists, rate every song, and curate your personal album rating library with SLEEVE." />
+  <title>RATEPLAY — Listen in Full | Album Rating, Collection &amp; Review Platform</title>
+  <meta name="description" content="Discover albums, inspect full tracklists, rate every song, curate custom and smart collections, write listening journal notes, and export 1080x1920 social cards with RATEPLAY." />
+  <meta name="application-name" content="RATEPLAY" />
+  <meta name="apple-mobile-web-app-title" content="RATEPLAY" />
   <meta name="theme-color" content="#0B0B0C" />
 
-  <!-- Favicon -->
+  <!-- Open Graph & Social Sharing Metadata -->
+  <meta property="og:site_name" content="RATEPLAY" />
+  <meta property="og:title" content="RATEPLAY — Listen in Full | Album Rating &amp; Review Platform" />
+  <meta property="og:description" content="Discover albums, rate individual tracks, build smart collections, analyze your Taste DNA, and export 1080x1920 review graphics with RATEPLAY." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RATEPLAY — Listen in Full" />
+  <meta name="twitter:description" content="Discover albums, rate individual tracks, curate smart collections, and generate 1080x1920 social review cards with RATEPLAY." />
+
+  <!-- Favicon & Web App Manifest -->
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
 
   <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet" />
 
-  <!-- SLEEVE Design System Stylesheets -->
+  <!-- RATEPLAY Design System Stylesheets -->
   <link rel="stylesheet" href="./css/variables.css" />
   <link rel="stylesheet" href="./css/base.css" />
   <link rel="stylesheet" href="./css/components.css" />
@@ -28,13 +40,13 @@
     <!-- Top Editorial Navigation Bar -->
     <header class="site-header" role="banner">
       <div class="container header-inner">
-        <a href="#discover" class="brand-lockup" id="brand-home-link" aria-label="SLEEVE Home - Discover Albums">
+        <a href="#discover" class="brand-lockup" id="brand-home-link" aria-label="RATEPLAY Home - Discover Albums">
           <span class="brand-emblem" aria-hidden="true">
-            <span class="brand-sleeve-box"></span>
+            <span class="brand-record-box"></span>
             <span class="brand-vinyl-disc"></span>
           </span>
           <span class="brand-text-group">
-            <span class="brand-name">SLEEVE</span>
+            <span class="brand-name">RATEPLAY</span>
             <span class="brand-tagline">LISTEN IN FULL</span>
           </span>
         </a>
@@ -58,14 +70,14 @@
             <span class="nav-count-badge" id="nav-library-count" hidden>0</span>
           </button>
 
-                    <button type="button" class="nav-tab" id="nav-profile-btn" data-nav="profile">
+          <button type="button" class="nav-tab" id="nav-profile-btn" data-nav="profile">
             <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M4 15.5V10.5M10 15.5V4.5M16 15.5V8" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/>
             </svg>
             <span>Taste Profile</span>
           </button>
 
-                    <button type="button" class="nav-tab" id="nav-insights-btn" data-nav="insights">
+          <button type="button" class="nav-tab" id="nav-insights-btn" data-nav="insights">
             <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.65"/>
               <path d="M10 6V10L13 12" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/>
@@ -73,7 +85,7 @@
             <span>Insights</span>
           </button>
 
-                    <button type="button" class="nav-tab" id="nav-journal-btn" data-nav="journal">
+          <button type="button" class="nav-tab" id="nav-journal-btn" data-nav="journal">
             <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <rect x="4" y="3" width="12" height="14" rx="1.8" stroke="currentColor" stroke-width="1.65"/>
               <path d="M7.5 7H12.5M7.5 10H12.5M7.5 13H10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -82,7 +94,7 @@
             <span class="nav-count-badge" id="nav-journal-count" hidden>0</span>
           </button>
 
-                    <button type="button" class="nav-tab" id="nav-collections-btn" data-nav="collections">
+          <button type="button" class="nav-tab" id="nav-collections-btn" data-nav="collections">
             <svg class="nav-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <rect x="3" y="3" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
               <rect x="11" y="3" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
@@ -122,13 +134,13 @@
     <footer class="site-footer" role="contentinfo">
       <div class="container footer-inner">
         <div class="footer-brand-col">
-          <span class="footer-brand">SLEEVE // ARCHIVAL ALBUM LOG</span>
+          <span class="footer-brand">RATEPLAY // ARCHIVAL ALBUM LOG</span>
           <p class="footer-copy">
             Built for album-first listeners. Album metadata and artwork provided via the public iTunes Search &amp; Lookup API.
           </p>
         </div>
         <div class="footer-meta-col">
-          <span class="footer-badge">PHASE 9B BUILD &middot; SMART COLLECTIONS &amp; POSTERS</span>
+          <span class="footer-badge">RATEPLAY &middot; ALBUM RATING, COLLECTION &amp; REVIEW PLATFORM</span>
           <span class="footer-shortcut-hint">Press <kbd>/</kbd> to search</span>
         </div>
       </div>

@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 6 (Part 2) Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 6 (Part 2) Automated Verification Suite (Node.js)
  * Verifies:
  * 1. JavaScript syntax across all 20 project modules
  * 2. Library JSON export payload structure and metadata inclusion
@@ -136,7 +136,7 @@ runTest('1. Export serializes ratingsMap and albumMetadataMap with format and ve
   assert.equal(payload.albumMetadataMap['1097862870'].collectionName, 'In Rainbows');
 
   const fn = buildExportFilename(new Date('2026-10-18T12:00:00Z'));
-  assert.ok(fn.startsWith('SLEEVE-Library-Backup-2026-10-'));
+  assert.ok(fn.startsWith('RATEPLAY-Library-Backup-2026-10-'));
   assert.ok(fn.endsWith('.json'));
 });
 

@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Listening Journal Engine & JSON Portability (Phase 8)
+ * RATEPLAY - Listening Journal Engine & JSON Portability (Phase 8)
  * Pure functions for enriching journal entries with album metadata and ratings,
  * searching across titles/artists/notes/track notes/tags, filtering by mood tag
  * and rating tier, sorting, and validating/merging JSON exports and imports.
@@ -21,7 +21,8 @@ import {
 } from './storage.js';
 import { buildLibraryEntry } from './library.js';
 
-export const JOURNAL_EXPORT_FORMAT_ID = 'SLEEVE_JOURNAL_EXPORT';
+export const JOURNAL_EXPORT_FORMAT_ID = 'RATEPLAY_JOURNAL_EXPORT';
+export const LEGACY_JOURNAL_EXPORT_FORMAT_ID = 'RATEPLAY_JOURNAL_EXPORT';
 export const JOURNAL_EXPORT_VERSION = 1;
 
 export const JOURNAL_SORT_MODES = {
@@ -392,7 +393,7 @@ export function buildJournalExportFilename(dateObj = new Date()) {
   const yyyy = String(safeDate.getFullYear());
   const mm = String(safeDate.getMonth() + 1).padStart(2, '0');
   const dd = String(safeDate.getDate()).padStart(2, '0');
-  return 'SLEEVE-Journal-Backup-' + yyyy + '-' + mm + '-' + dd + '.json';
+  return 'RATEPLAY-Journal-Backup-' + yyyy + '-' + mm + '-' + dd + '.json';
 }
 
 export function buildJournalExportPayload(
@@ -445,7 +446,7 @@ export function buildJournalExportPayload(
   return {
     format: JOURNAL_EXPORT_FORMAT_ID,
     version: JOURNAL_EXPORT_VERSION,
-    app: 'SLEEVE',
+    app: 'RATEPLAY',
     exportedAt: new Date().toISOString(),
     summary: {
       entryCount: Object.keys(exportedJournalMap).length,
@@ -520,7 +521,7 @@ export function validateAndPreviewJournalImport(
   if (typeof rawJsonText !== 'string' || !rawJsonText.trim()) {
     return {
       ok: false,
-      error: 'The selected file is empty. Please choose a valid SLEEVE Journal JSON file.'
+      error: 'The selected file is empty. Please choose a valid RATEPLAY Journal JSON file.'
     };
   }
 
@@ -541,7 +542,7 @@ export function validateAndPreviewJournalImport(
     };
   }
 
-  if (parsed.format !== undefined && parsed.format !== JOURNAL_EXPORT_FORMAT_ID) {
+  if (parsed.format !== undefined && parsed.format !== JOURNAL_EXPORT_FORMAT_ID && parsed.format !== LEGACY_JOURNAL_EXPORT_FORMAT_ID) {
     return {
       ok: false,
       error:
@@ -594,7 +595,7 @@ export function validateAndPreviewJournalImport(
     return {
       ok: false,
       error:
-        'Missing required "journalMap" field. Please select a valid SLEEVE Journal export file.'
+        'Missing required "journalMap" field. Please select a valid RATEPLAY Journal export file.'
     };
   }
 

@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 6 (Part 1) Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 6 (Part 1) Automated Verification Suite (Node.js)
  * Verifies:
  * 1. JavaScript syntax across all 16 project modules
  * 2. Empty library profile calculation (0 rated albums, null average, no NaN/Infinity)
@@ -316,7 +316,7 @@ runTest('4. Shareable 1080x1920 Taste Profile Canvas renders all 3 themes and ne
     assert.equal(item.text.includes('undefined'), false);
   }
 
-  assert.equal(buildSanitizedProfileFilename('Taste Profile'), 'SLEEVE - Taste Profile.png');
+  assert.equal(buildSanitizedProfileFilename('Taste Profile'), 'RATEPLAY - Taste Profile.png');
 });
 
 console.log('\nAll ' + String(passed) + ' Phase 6 (Part 1) automated verification suites passed.\n');

@@ -1,0 +1,17 @@
+{
+  "name": "RATEPLAY — Listen in Full",
+  "short_name": "RATEPLAY",
+  "description": "Discover albums, rate every track, curate smart collections, write listening journal notes, and generate shareable 1080x1920 review cards with RATEPLAY.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

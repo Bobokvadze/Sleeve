@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SLEEVE DESIGN SYSTEM â€” TOKENS & CUSTOM PROPERTIES
+   RATEPLAY DESIGN SYSTEM â€” TOKENS & CUSTOM PROPERTIES
    Tactile Editorial Dark Palette, Typography, Spacing & Rating Tiers
    ========================================================================== */
 
@@ -72,7 +72,7 @@
 
   /* Shadows & Motion */
   --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.65);
-  --shadow-sleeve: 0 20px 45px -12px rgba(0, 0, 0, 0.8);
+  --shadow-cover: 0 20px 45px -12px rgba(0, 0, 0, 0.8);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 150ms;
   --duration-normal: 240ms;

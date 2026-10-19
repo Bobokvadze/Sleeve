@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Main Application Controller (Phase 9A)
+ * RATEPLAY - Main Application Controller (Phase 9A)
  * Coordinates Discover, My Library, Taste Profile, Listening Insights,
  * Listening Journal, Custom Collections (#collections & #collection/{id}),
  * Album Detail, JSON Portability, and Social Card Modals.

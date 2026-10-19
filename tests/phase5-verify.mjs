@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 5 Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 5 Automated Verification Suite (Node.js)
  * Verifies all 17 Phase 5 requirements including:
  * - Syntax checks across all 13 project JS/MJS modules
  * - Exact 1080x1920 Canvas output dimensions
@@ -8,7 +8,7 @@
  * - Verdict inclusion when present and strict omission when blank
  * - All 3 themes (Obsidian, Paper, Signal) rendering cleanly
  * - Artwork handling & procedural fallback when image is null/CORS-blocked
- * - Filename sanitization ("SLEEVE - Artist - Album.png")
+ * - Filename sanitization ("RATEPLAY - Artist - Album.png")
  * - Strict protection against NaN, undefined, null, or Infinity in rendered text
  */
 
@@ -286,9 +286,9 @@ runTest('4. All three themes (Obsidian, Paper, Signal) render with artwork and p
 });
 
 // Test 5: Filename sanitization strips invalid characters and produces predictable output
-runTest('5. Filename sanitizer produces clean "SLEEVE - Artist - Album.png" filenames', () => {
+runTest('5. Filename sanitizer produces clean "RATEPLAY - Artist - Album.png" filenames', () => {
   const fn1 = buildSanitizedCardFilename('Radiohead', 'In Rainbows');
-  assert.equal(fn1, 'SLEEVE - Radiohead - In Rainbows.png');
+  assert.equal(fn1, 'RATEPLAY - Radiohead - In Rainbows.png');
 
   const fn2 = buildSanitizedCardFilename('AC/DC: Live*?', 'Back\\In|Black "Deluxe" <2026>');
   assert.equal(fn2.includes('/'), false);
@@ -300,7 +300,7 @@ runTest('5. Filename sanitizer produces clean "SLEEVE - Artist - Album.png" file
   assert.equal(fn2.includes('<'), false);
   assert.equal(fn2.includes('>'), false);
   assert.equal(fn2.includes('|'), false);
-  assert.ok(fn2.startsWith('SLEEVE - '));
+  assert.ok(fn2.startsWith('RATEPLAY - '));
   assert.ok(fn2.endsWith('.png'));
 });
 

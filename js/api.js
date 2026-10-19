@@ -1,5 +1,5 @@
 /**
- * SLEEVE - iTunes Search & Lookup Metadata Client
+ * RATEPLAY - iTunes Search & Lookup Metadata Client
  */
 
 import { APP_CONFIG, CURATED_ALBUMS } from './config.js';
@@ -33,7 +33,7 @@ async function fetchItunesJson(url) {
 function fetchItunesJsonp(url) {
   return new Promise((resolve, reject) => {
     const callbackName =
-      '__sleeveItunesCb_' + String(Date.now()) + '_' + String(Math.floor(Math.random() * 10000));
+      '__rateplayItunesCb_' + String(Date.now()) + '_' + String(Math.floor(Math.random() * 10000));
     const script = document.createElement('script');
     const separator = url.includes('?') ? '&' : '?';
     let settled = false;

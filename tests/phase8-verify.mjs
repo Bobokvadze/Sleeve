@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 8 Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 8 Automated Verification Suite (Node.js)
  * Verifies:
  * 1. JavaScript syntax across all 27 project modules
  * 2. Journal CRUD (create, read, update, delete) with createdAt preservation & updatedAt updates

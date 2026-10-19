@@ -1,5 +1,7 @@
 {
-  "name": "sleeve",
+  "name": "rateplay",
+  "version": "1.0.0",
+  "description": "RATEPLAY — Music Album Rating, Collection, Insights & Review Platform",
   "private": true,
   "type": "module"
 }

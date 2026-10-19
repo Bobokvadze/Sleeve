@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Listening Journal Modals (Phase 8)
+ * RATEPLAY - Listening Journal Modals (Phase 8)
  * Provides:
  * 1. Accessible Journal Entry Editor Modal (personal review text, preset + custom mood tags,
  *    favorite track checkboxes, and individual track notes).
@@ -517,10 +517,10 @@ function ensureJournalImportModalMount() {
     '<div class="import-modal__body">' +
     '<div class="import-file-picker-box">' +
     '<label for="journal-import-file-input" class="import-file-label">' +
-    '<span class="import-file-label__title">Select a SLEEVE Journal JSON Backup (.json)</span>' +
+    '<span class="import-file-label__title">Select a RATEPLAY Journal JSON Backup (.json)</span>' +
     '<span class="import-file-label__sub">Merges journal entries safely without deleting existing entries or changing any album ratings.</span>' +
     '</label>' +
-    '<input type="file" id="journal-import-file-input" class="import-file-input" accept=".json,application/json" aria-label="Choose SLEEVE journal JSON file to import" />' +
+    '<input type="file" id="journal-import-file-input" class="import-file-input" accept=".json,application/json" aria-label="Choose RATEPLAY journal JSON file to import" />' +
     '</div>' +
     '<div id="journal-import-backup-bar" class="import-backup-restore-bar" hidden></div>' +
     '<div id="journal-import-validation-mount" aria-live="polite"></div>' +

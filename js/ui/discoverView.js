@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Discover View & Personalized Recommendations Renderer (Phase 6 - Part 2)
+ * RATEPLAY - Discover View & Personalized Recommendations Renderer (Phase 6 - Part 2)
  */
 
 import {
@@ -44,7 +44,7 @@ export function renderDiscoverShell(container, state) {
   container.innerHTML =
     '<section class="discover-hero" aria-label="Album Discovery Search">' +
     '<div class="discover-hero__eyebrow">' +
-    '<span>SLEEVE CATALOG ENGINE</span><span>//</span><span>ARCHIVE &amp; TRACKLIST INSPECTOR</span>' +
+    '<span>RATEPLAY CATALOG ENGINE</span><span>//</span><span>ARCHIVE &amp; TRACKLIST INSPECTOR</span>' +
     '</div>' +
     '<h1 class="discover-hero__title">Every great record deserves a full listen.</h1>' +
     '<p class="discover-hero__subtitle">' +
@@ -94,7 +94,7 @@ export function renderPersonalizedDiscoverySection(mountEl, discoveryState) {
       '<div class="discovery-callout-panel__content">' +
       '<span class="section-header__eyebrow">PERSONALIZED DISCOVERY // SIGNAL ENGINE</span>' +
       '<h2 class="discovery-callout-panel__title">Rate your first album to unlock tailored artist &amp; catalog recommendations</h2>' +
-      '<p class="discovery-callout-panel__desc">Once you rate tracks on any record, SLEEVE analyzes your highest-scored artists to surface deeper catalog cuts and unrated pressings.</p>' +
+      '<p class="discovery-callout-panel__desc">Once you rate tracks on any record, RATEPLAY analyzes your highest-scored artists to surface deeper catalog cuts and unrated pressings.</p>' +
       '</div>' +
       '</div>';
     return;

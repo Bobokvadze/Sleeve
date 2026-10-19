@@ -1,5 +1,5 @@
 /**
- * SLEEVE - Phase 9B Automated Verification Suite (Node.js)
+ * RATEPLAY - Phase 9B Automated Verification Suite (Node.js)
  * Verifies:
  * 1. JavaScript syntax across all 32 project modules
  * 2. Smart Collection rule evaluation:
@@ -396,7 +396,7 @@ runTest('4. Collection Poster renders 1080x1920 PNG for Manual, Smart, and Empty
   assert.equal(emptyCanvas.height, 1920);
 
   const fn = buildSanitizedCollectionPosterFilename('Late Night: 90s/00s*');
-  assert.equal(fn, 'SLEEVE - Collection - Late Night 90s 00s.png');
+  assert.equal(fn, 'RATEPLAY - Collection - Late Night 90s 00s.png');
 });
 
 console.log('\nAll ' + String(passed) + ' Phase 9B automated verification suites passed.\n');
